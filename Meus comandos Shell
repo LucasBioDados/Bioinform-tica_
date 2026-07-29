@@ -1,0 +1,72 @@
+#Meu percurso nos códigos shell
+#Ao entrar no servidor da universidade com o login:
+    #usuário@________.______.ufmg.br e utilizar sua senha
+#entendemos o primerio comando shell
+
+#ssh "nome_da_máquin"
+    #O ssh é um comando que te permite entrar e operar uma máquina ou servidor 
+    #de forma remota
+
+#history
+    #Ao entrar na minha máquina remota posso verificar meu histórico de comandos
+    #a partir do "history" e com ele posso buscar linhas de código antigas
+    #utilizando as setas.
+    
+#pwd (porra wath directory is this?)
+    #O pwd é o comando que vai te situar onde você está, vai te dizer exatamente
+    #em qual diretório você se enfiou.
+    
+#ls (list)
+    #Ao saber o diretório que você está inserido, pode dar um "ls" para LStar 
+    #os itens que estão presentes no seu diretório, e a partir disso acessa-los
+    #modificalos, excluílos e etc.
+
+#cd e cd .. (change directory)
+    #O cd vai te ajudar a entrar em outros diretórios disponíveis, o cd "cru" 
+    #vai te jogar no diretório que você designar por ex: vamos supor que você
+    #está na pasta_01 e quer ir pra pasta_02, logo digite o comando
+    #cd pasta_02 e assim você será lançado para dentro da pasta_02. 
+    
+    #Já o "cd .." ele vai ser sua corda de escapada, agora dentro da pasta_02
+    #vamos supor que você queira voltar novamente para a sua boa e felha pasta_01
+    #Então basta apenas digitar cd .. que o comando te trará de volta ao diretório anterior
+    
+#mkdir (make directory)
+    #Ao voltar para a sua aconchegante pasta_01 você percebe que precisa de uma
+    #nova pasta para organizar suas longas sequências, então deicide criara a
+    #boa e igualmente aconhcegante pasta_03. Para fazer isso você utilizará o 
+    #comando mkdir pasta_03 e isso criará sua nova pasta. 
+    
+#grepe (Grepe ainda será mais desenvolvido à medida que for sendo utilizado, 
+#ainda há outras coisas bacanas que se pode fazer com ele)
+    #Agora que sua pasta_03 está pronta e seu amontoado de sequências está lá
+    #só esperando você analisar, lembramos que há uma sequência especial, aquela
+    #que você não vê a hora de analisar primeiro e não consegue parar de pensar
+    #nela, então precisamos acha-las dentro do nosso documento.
+    #E para isso utilizamos o grepe, ele atua como um comando localizador e 
+    #buscador, então utilizamos a seguinte sequência:
+        #grepe "texto que quer encontrar" arquivo.txt (tipo do arquivo)
+
+#nano
+    #Ao encontrar seu amado arquivo percebe que há coisas que ainda precisam 
+    #ser ajustadas/modificadas nas linhas de código, para fazer essas edições 
+    #utiliza-se o nano, um comando de edição textual assim como o notepad/bloco de notas
+    #a diferença é que aqui você pode editar do próprio terminal 
+    #sem usar aplicativos externos utilizando o seguinte comando:
+        # nano "nome do meu arquivo".txt (tipo do seu arquivo)
+    #Se existir um arquivo com o nome e tipo que você inseriu ele será aberto
+    #em uma interface nada convidativa mas não se assuste, é bem simples quando
+    #o receio se esvai, lá você pode digitar normalmente e ao terminar utilize
+    #alguns comandos, como:
+        #Ctrl + O = Salva o arquivo
+        #Ctrl + X = Fecha o editor (fecha o nano)
+        #Ctrl + W = Busca uma palavra dentro do arquivo (parecido com nosso grepe)
+        #Ctrl + K = Corta uma linha 
+        #Ctrl + U = Traz de volta dos mortos a linha cortada 
+
+#exit
+    #Ao terminar tudo que fez você pode só dar um exit e sairá da máquina, e seu
+    #dia hoje como programador de shell está finalizado.
+
+#Por enquanto esses são os comandos que utilizei em shell, a medida que eu for 
+#aprendendo mais vou atualizando esse arquivo
