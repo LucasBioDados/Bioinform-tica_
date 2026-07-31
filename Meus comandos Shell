@@ -70,3 +70,36 @@
 
 #Por enquanto esses são os comandos que utilizei em shell, a medida que eu for 
 #aprendendo mais vou atualizando esse arquivo
+
+#sinfo 
+    #O sinfo é uma ferramenta que o geranciador de filas Slurm (slurm é um gerenciador 
+    #de recursos e filas de um cluster) o comando é utilizado para consultar o status das
+    #partições e de máquinas de um cluster.
+    
+    #Ao executa-lo o comando trará os seguintes resultados: 
+#PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+#filaGPU*     up   infinite     12  alloc gpu
+#filaGPU*     up   infinite      2   idle gpu
+#filaA40      up   infinite      1   idle n000
+#fila3090     up   infinite      1  alloc ia01
+#fila3090     up   infinite      1   idle ia02
+#filaCPU      up   infinite      2   idle cpu
+#filaBuild    up    4:00:00      1   idle cpu03
+
+#PARA SABER O QUE CADA COISA SIGNIFICA:
+    #Partition: É o nome da fila de processamento. Quando houver um asterísco significa que ali é a fila padrão do sistema.
+    # AVAIL: Indica se a fila está ativa (up) ou desativada (down)
+    # TIMELIMIT: O tempo máximo que você pode utilizar aquela máquina.
+    # NODES: Signfica quantos computadores individuais estão trabalhando naquele momento
+    # STATE: O estado operacional de um slurm 
+            # Entendendo a coluna STATE (o estado dos nós):
+                #idle: Livre, pronta para receber um job
+                #alloc: 100% ocupada por usuários
+                #mix: parcialmente ocupado
+                #DOWN: Fora do ar, totalmente indisponível.
+                #DRAIN: Em estado de manutenção
+    #NODELIST: O nome individual de cada máquina.
+    
+#nvidia-smi -l 2
+    #o nvdia é um comando utilizado para o monitoramento em tempo real das placas de vídeo, que atualiza a cada 2s.
+    
