@@ -37,15 +37,15 @@
     #boa e igualmente aconhcegante pasta_03. Para fazer isso você utilizará o 
     #comando mkdir pasta_03 e isso criará sua nova pasta. 
     
-#grepe (Grepe ainda será mais desenvolvido à medida que for sendo utilizado, 
+#grep (Grep ainda será mais desenvolvido à medida que for sendo utilizado, 
 #ainda há outras coisas bacanas que se pode fazer com ele)
     #Agora que sua pasta_03 está pronta e seu amontoado de sequências está lá
     #só esperando você analisar, lembramos que há uma sequência especial, aquela
     #que você não vê a hora de analisar primeiro e não consegue parar de pensar
     #nela, então precisamos acha-las dentro do nosso documento.
-    #E para isso utilizamos o grepe, ele atua como um comando localizador e 
+    #E para isso utilizamos o grep, ele atua como um comando localizador e 
     #buscador, então utilizamos a seguinte sequência:
-        #grepe "texto que quer encontrar" arquivo.txt (tipo do arquivo)
+        #grep "texto que quer encontrar" arquivo.txt (tipo do arquivo)
 
 #nano
     #Ao encontrar seu amado arquivo percebe que há coisas que ainda precisam 
@@ -78,12 +78,12 @@
     
     #Ao executa-lo o comando trará os seguintes resultados: 
 #PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-#filaGPU*     up   infinite     12  alloc gpu
-#filaGPU*     up   infinite      2   idle gpu
+#filaGPU*     up   infinite     12  alloc gpu[01-06,09-14]
+#filaGPU*     up   infinite      2   idle gpu[07-08]
 #filaA40      up   infinite      1   idle n000
 #fila3090     up   infinite      1  alloc ia01
 #fila3090     up   infinite      1   idle ia02
-#filaCPU      up   infinite      2   idle cpu
+#filaCPU      up   infinite      2   idle cpu[01-02]
 #filaBuild    up    4:00:00      1   idle cpu03
 
 #PARA SABER O QUE CADA COISA SIGNIFICA:
@@ -103,3 +103,12 @@
 #nvidia-smi -l 2
     #o nvdia é um comando utilizado para o monitoramento em tempo real das placas de vídeo, que atualiza a cada 2s.
     
+#squeue 
+    #É o comando que solicita ao Slurm uma lista dos jobs que estão na fila de processmento. Quais estão rodando (R)
+    #Qausi estão esperando (PD) e em quanto tempo e em quais nós eles estão.
+    
+#watch squeue
+    #Para entender o comando acima, primeiro precisamos entender o que o watch simboliza.
+    # O watch vai executar de forma repetida em intervalos de tempo fixos uma atualização automatica da tela
+    #então quando executamos o watch squeue o terminal se transforma em um painel em tempo real da fila que
+    #é atualizado a cada 2s por padrão. E para sair do painel basta utilizar as teclas Ctrl + C.
