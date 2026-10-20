@@ -1,0 +1,24 @@
+#Durante o processo de simulações em Bash encontrei um problema de como posso observar quais simulações acabaram sem que eu precise abrir dcd por dcd ou ter que baixar arquivos imensos como .out
+#esse passo a passo ajuda a observar quais jobs acabaram e qual seu diretório.
+
+cd logs/ #Primeiro é necessário entrar na pasta onde estão nossos arquivos .out
+grep -l "End of program" namd_{7606,7611}_*.out #Aqui utilizei o comando grep -l para procurar listar termos correspondentes, já que o NAMD escreve no fim dos arquivos .out "End of program", seleciona-se as filas correspondentes para o arquivo .out
+
+#Resposta do diretório
+namd_7606_0.out
+namd_7606_1.out
+namd_7606_2.out
+namd_7606_3.out
+
+#Aqui o terminal vai retornar quais os arquivos possuem o termo pesquisado, indicado que esses 4 jobs foram finalizados. Mas ainda preciso encontrar o nome deles. Então:
+
+#Criando uma variável para encontrar o nome do arquivo
+for f in namd_7606_*.out; do
+  echo -n "$f -> "
+  grep -i "structure" "$f" | head -n 1
+done
+
+#Com esse script crio um loop com a variável f para armazenar arquivos que tenham a terminologia namd_7606_*.out (o asterisco é equivalente a um "tanto faz") 
+#Em seguida ele vai imprimir a variável F logo após uma seta, com a opção -n impedindo que o script pule a liinha de baixo levando o resultado para outra linha
+#O grep vai procurar a palavra "structure" dentro da nossa variável F que está armazenando os arquivos .out de interesse com a opção -i que vai ignorar maiúsculas e minússculas. Procuro por structure porque é nela que está o caminho para a pasta original
+#E o head -n 1 impede que o programa fique procurando por várias palavras "strucuture" 
